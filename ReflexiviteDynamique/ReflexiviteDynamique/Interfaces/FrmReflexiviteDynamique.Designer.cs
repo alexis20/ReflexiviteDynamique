@@ -93,6 +93,7 @@
 			// 
 			// CbClasses
 			// 
+			this.CbClasses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.CbClasses.FormattingEnabled = true;
 			this.CbClasses.Location = new System.Drawing.Point(52, 0);
 			this.CbClasses.Margin = new System.Windows.Forms.Padding(0);

@@ -14,7 +14,7 @@ namespace ReflexiviteDynamique
 		public void Init()
 		{
 			LbConstructeurs.DataSource = null;
-			BtnConstruire.Visible = false;
+			BtnConstruire.Enabled = false;
 		}
 
 
@@ -26,7 +26,7 @@ namespace ReflexiviteDynamique
 
 		private void LbConstructeurs_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			BtnConstruire.Visible = LbConstructeurs.SelectedItems.Count > 0;
+			BtnConstruire.Enabled = LbConstructeurs.SelectedItems.Count > 0;
 		}
 	}
 }

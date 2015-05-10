@@ -27,6 +27,8 @@ namespace ReflexiviteDynamique
 			{
 				CbClasses.Items.Add(item.Name);
 			}
+
+			UcConstructeurs.Init();
 		}
 
 
@@ -37,14 +39,17 @@ namespace ReflexiviteDynamique
 					.ToList();
 		}
 
-        private Type getClasses(string t)
+
+        private Type GetType(string t)
         {
             return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == "ReflexiviteDynamique.Classes" && u.Name == t);
         }
 
+
         private void CbClasses_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
+			if (!string.IsNullOrEmpty(CbClasses.SelectedItem.ToString()))
+				UcConstructeurs.Display(GetType(CbClasses.SelectedItem.ToString()));
 		}
 	}
 }
