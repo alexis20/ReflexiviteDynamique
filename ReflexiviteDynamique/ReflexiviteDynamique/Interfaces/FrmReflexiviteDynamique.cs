@@ -13,6 +13,9 @@ namespace ReflexiviteDynamique
 {
 	public partial class FrmReflexiviteDynamique : Form
 	{
+		private Type type = null;
+
+
 		public FrmReflexiviteDynamique()
 		{
 			InitializeComponent();
@@ -32,7 +35,7 @@ namespace ReflexiviteDynamique
 		}
 
 
-	    List<Type> GetClasses()
+		List<Type> GetClasses()
 		{
 			return Assembly.GetExecutingAssembly().GetTypes()
 					.Where(t => t.IsClass && t.Namespace == "ReflexiviteDynamique.Classes")
@@ -40,16 +43,25 @@ namespace ReflexiviteDynamique
 		}
 
 
-        private Type GetType(string t)
-        {
-            return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == "ReflexiviteDynamique.Classes" && u.Name == t);
-        }
+		private Type GetType(string t)
+		{
+			return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == "ReflexiviteDynamique.Classes" && u.Name == t);
+		}
 
 
-        private void CbClasses_SelectedIndexChanged(object sender, EventArgs e)
+		private void CbClasses_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (!string.IsNullOrEmpty(CbClasses.SelectedItem.ToString()))
-				UcConstructeurs.Display(GetType(CbClasses.SelectedItem.ToString()));
+			{
+				type = GetType(CbClasses.SelectedItem.ToString());
+				UcConstructeurs.Display(type);
+			}
+		}
+
+
+		private void UcConstructeurs_ObjetConstruit(object sender, EventArgs e)
+		{
+			UcMethodes.Display(type);
 		}
 	}
 }

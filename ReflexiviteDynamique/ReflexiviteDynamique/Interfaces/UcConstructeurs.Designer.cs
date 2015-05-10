@@ -84,6 +84,7 @@
 			this.BtnConstruire.TabIndex = 2;
 			this.BtnConstruire.Text = "Construire Objet";
 			this.BtnConstruire.UseVisualStyleBackColor = true;
+			this.BtnConstruire.Click += new System.EventHandler(this.BtnConstruire_Click);
 			// 
 			// UcConstructeurs
 			// 

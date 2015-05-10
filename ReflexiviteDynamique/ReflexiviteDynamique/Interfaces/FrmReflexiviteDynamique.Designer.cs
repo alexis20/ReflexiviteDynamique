@@ -109,6 +109,7 @@
 			this.UcConstructeurs.Name = "UcConstructeurs";
 			this.UcConstructeurs.Size = new System.Drawing.Size(415, 442);
 			this.UcConstructeurs.TabIndex = 1;
+			this.UcConstructeurs.ObjetConstruit += new System.EventHandler(this.UcConstructeurs_ObjetConstruit);
 			// 
 			// UcMethodes
 			// 

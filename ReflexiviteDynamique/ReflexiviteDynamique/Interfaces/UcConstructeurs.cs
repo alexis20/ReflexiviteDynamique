@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ReflexiviteDynamique
 {
 	public partial class UcConstructeurs : UserControl
 	{
+		public event EventHandler ObjetConstruit;
+
 		public UcConstructeurs()
 		{
 			InitializeComponent();
@@ -26,7 +29,18 @@ namespace ReflexiviteDynamique
 
 		private void LbConstructeurs_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			BtnConstruire.Enabled = LbConstructeurs.SelectedItems.Count > 0;
+			if (LbConstructeurs.SelectedItems.Count > 0)
+			{
+				ConstructorInfo ci = (ConstructorInfo)LbConstructeurs.SelectedItem;
+				BtnConstruire.Enabled = ci.GetParameters().Length == 0;		// On ne veut que le constructeur par défaut
+			}
+		}
+
+
+		private void BtnConstruire_Click(object sender, EventArgs e)
+		{
+			if (ObjetConstruit != null)
+				ObjetConstruit(this, e);
 		}
 	}
 }
