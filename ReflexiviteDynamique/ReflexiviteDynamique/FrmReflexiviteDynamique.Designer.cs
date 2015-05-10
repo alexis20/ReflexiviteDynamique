@@ -50,7 +50,7 @@
 			this.PnlMain.Margin = new System.Windows.Forms.Padding(0);
 			this.PnlMain.Name = "PnlMain";
 			this.PnlMain.Padding = new System.Windows.Forms.Padding(10);
-			this.PnlMain.Size = new System.Drawing.Size(863, 483);
+			this.PnlMain.Size = new System.Drawing.Size(864, 492);
 			this.PnlMain.TabIndex = 0;
 			// 
 			// TlpMain
@@ -68,7 +68,7 @@
 			this.TlpMain.RowCount = 2;
 			this.TlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
 			this.TlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.TlpMain.Size = new System.Drawing.Size(841, 461);
+			this.TlpMain.Size = new System.Drawing.Size(842, 470);
 			this.TlpMain.TabIndex = 0;
 			// 
 			// FlpClasse
@@ -79,7 +79,7 @@
 			this.FlpClasse.Location = new System.Drawing.Point(0, 0);
 			this.FlpClasse.Margin = new System.Windows.Forms.Padding(0);
 			this.FlpClasse.Name = "FlpClasse";
-			this.FlpClasse.Size = new System.Drawing.Size(420, 22);
+			this.FlpClasse.Size = new System.Drawing.Size(421, 22);
 			this.FlpClasse.TabIndex = 0;
 			// 
 			// LblClasse
@@ -105,22 +105,22 @@
 			this.UcConstructeurs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.UcConstructeurs.Location = new System.Drawing.Point(3, 25);
 			this.UcConstructeurs.Name = "UcConstructeurs";
-			this.UcConstructeurs.Size = new System.Drawing.Size(414, 433);
+			this.UcConstructeurs.Size = new System.Drawing.Size(415, 442);
 			this.UcConstructeurs.TabIndex = 1;
 			// 
 			// UcMethodes
 			// 
 			this.UcMethodes.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.UcMethodes.Location = new System.Drawing.Point(423, 25);
+			this.UcMethodes.Location = new System.Drawing.Point(424, 25);
 			this.UcMethodes.Name = "UcMethodes";
-			this.UcMethodes.Size = new System.Drawing.Size(415, 433);
+			this.UcMethodes.Size = new System.Drawing.Size(415, 442);
 			this.UcMethodes.TabIndex = 2;
 			// 
 			// FrmReflexiviteDynamique
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(883, 503);
+			this.ClientSize = new System.Drawing.Size(884, 512);
 			this.Controls.Add(this.PnlMain);
 			this.Name = "FrmReflexiviteDynamique";
 			this.Padding = new System.Windows.Forms.Padding(10);
