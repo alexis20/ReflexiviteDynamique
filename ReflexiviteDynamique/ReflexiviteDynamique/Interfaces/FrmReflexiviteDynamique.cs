@@ -32,6 +32,7 @@ namespace ReflexiviteDynamique
 			}
 
 			UcConstructeurs.Init();
+            UcMethodes.Init();
 		}
 
 
@@ -55,13 +56,14 @@ namespace ReflexiviteDynamique
 			{
 				type = GetType(CbClasses.SelectedItem.ToString());
 				UcConstructeurs.Display(type);
-			}
+                UcMethodes.Display(type);
+            }
 		}
 
 
 		private void UcConstructeurs_ObjetConstruit(object sender, EventArgs e)
 		{
-			UcMethodes.Display(type);
+            UcMethodes.AfficherBouton();
 		}
 	}
 }
