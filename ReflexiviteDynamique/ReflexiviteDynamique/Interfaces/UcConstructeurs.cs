@@ -7,6 +7,7 @@ namespace ReflexiviteDynamique
 	public partial class UcConstructeurs : UserControl
 	{
 		public event EventHandler ObjetConstruit;
+		private ConstructorInfo ci = null;
 
 		public UcConstructeurs()
 		{
@@ -31,7 +32,7 @@ namespace ReflexiviteDynamique
 		{
 			if (LbConstructeurs.SelectedItems.Count > 0)
 			{
-				ConstructorInfo ci = (ConstructorInfo)LbConstructeurs.SelectedItem;
+				ci = (ConstructorInfo)LbConstructeurs.SelectedItem;
 				BtnConstruire.Enabled = ci.GetParameters().Length == 0;		// On ne veut que le constructeur par défaut
 			}
 		}
@@ -39,6 +40,8 @@ namespace ReflexiviteDynamique
 
 		private void BtnConstruire_Click(object sender, EventArgs e)
 		{
+			ci.Invoke(ci.GetParameters());
+
 			if (ObjetConstruit != null)
 				ObjetConstruit(this, e);
 		}
