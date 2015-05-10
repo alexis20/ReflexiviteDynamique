@@ -34,7 +34,6 @@
 			this.LblClasse = new System.Windows.Forms.Label();
 			this.CbClasses = new System.Windows.Forms.ComboBox();
 			this.UcConstructeurs = new ReflexiviteDynamique.UcConstructeurs();
-			this.UcMethodes = new ReflexiviteDynamique.UcMethodes();
 			this.PnlMain.SuspendLayout();
 			this.TlpMain.SuspendLayout();
 			this.FlpClasse.SuspendLayout();
@@ -55,12 +54,10 @@
 			// 
 			// TlpMain
 			// 
-			this.TlpMain.ColumnCount = 2;
-			this.TlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.TlpMain.ColumnCount = 1;
 			this.TlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.TlpMain.Controls.Add(this.FlpClasse, 0, 0);
 			this.TlpMain.Controls.Add(this.UcConstructeurs, 0, 1);
-			this.TlpMain.Controls.Add(this.UcMethodes, 1, 1);
 			this.TlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TlpMain.Location = new System.Drawing.Point(10, 10);
 			this.TlpMain.Margin = new System.Windows.Forms.Padding(0);
@@ -79,7 +76,7 @@
 			this.FlpClasse.Location = new System.Drawing.Point(0, 0);
 			this.FlpClasse.Margin = new System.Windows.Forms.Padding(0);
 			this.FlpClasse.Name = "FlpClasse";
-			this.FlpClasse.Size = new System.Drawing.Size(421, 22);
+			this.FlpClasse.Size = new System.Drawing.Size(842, 22);
 			this.FlpClasse.TabIndex = 0;
 			// 
 			// LblClasse
@@ -94,6 +91,7 @@
 			// CbClasses
 			// 
 			this.CbClasses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CbClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.CbClasses.FormattingEnabled = true;
 			this.CbClasses.Location = new System.Drawing.Point(52, 0);
 			this.CbClasses.Margin = new System.Windows.Forms.Padding(0);
@@ -107,17 +105,8 @@
 			this.UcConstructeurs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.UcConstructeurs.Location = new System.Drawing.Point(3, 25);
 			this.UcConstructeurs.Name = "UcConstructeurs";
-			this.UcConstructeurs.Size = new System.Drawing.Size(415, 442);
+			this.UcConstructeurs.Size = new System.Drawing.Size(836, 442);
 			this.UcConstructeurs.TabIndex = 1;
-			this.UcConstructeurs.ObjetConstruit += new System.EventHandler(this.UcConstructeurs_ObjetConstruit);
-			// 
-			// UcMethodes
-			// 
-			this.UcMethodes.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.UcMethodes.Location = new System.Drawing.Point(424, 25);
-			this.UcMethodes.Name = "UcMethodes";
-			this.UcMethodes.Size = new System.Drawing.Size(415, 442);
-			this.UcMethodes.TabIndex = 2;
 			// 
 			// FrmReflexiviteDynamique
 			// 
@@ -144,7 +133,6 @@
 		private System.Windows.Forms.Label LblClasse;
 		private System.Windows.Forms.ComboBox CbClasses;
 		private UcConstructeurs UcConstructeurs;
-		private UcMethodes UcMethodes;
 	}
 }
 

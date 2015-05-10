@@ -6,8 +6,8 @@ namespace ReflexiviteDynamique
 {
 	public partial class UcConstructeurs : UserControl
 	{
-		public event EventHandler ObjetConstruit;
 		private ConstructorInfo ci = null;
+		private Type type = null;
 
 		public UcConstructeurs()
 		{
@@ -19,17 +19,22 @@ namespace ReflexiviteDynamique
 		{
 			LbConstructeurs.DataSource = null;
 			BtnConstruire.Enabled = false;
+
+			UcMethodes.Init();
 		}
 
 
 		public void Display(Type t)
 		{
+			type = t;
 			LbConstructeurs.DataSource = t.GetConstructors();
 		}
 
 
 		private void LbConstructeurs_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			BtnConstruire.Enabled = false;	
+
 			if (LbConstructeurs.SelectedItems.Count > 0)
 			{
 				ci = (ConstructorInfo)LbConstructeurs.SelectedItem;
@@ -40,10 +45,7 @@ namespace ReflexiviteDynamique
 
 		private void BtnConstruire_Click(object sender, EventArgs e)
 		{
-			ci.Invoke(ci.GetParameters());
-
-			if (ObjetConstruit != null)
-				ObjetConstruit(this, e);
+			UcMethodes.Display(type, ci.Invoke(ci.GetParameters()));
 		}
 	}
 }

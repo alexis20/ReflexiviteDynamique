@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ReflexiviteDynamique
 {
 	public partial class FrmReflexiviteDynamique : Form
 	{
-		private Type type = null;
-
-
 		public FrmReflexiviteDynamique()
 		{
 			InitializeComponent();
@@ -32,7 +25,6 @@ namespace ReflexiviteDynamique
 			}
 
 			UcConstructeurs.Init();
-            UcMethodes.Init();
 		}
 
 
@@ -44,26 +36,16 @@ namespace ReflexiviteDynamique
 		}
 
 
-		private Type GetType(string t)
+		private Type GetType(string name)
 		{
-			return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == "ReflexiviteDynamique.Classes" && u.Name == t);
+			return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == "ReflexiviteDynamique.Classes" && u.Name == name);
 		}
 
 
 		private void CbClasses_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (!string.IsNullOrEmpty(CbClasses.SelectedItem.ToString()))
-			{
-				type = GetType(CbClasses.SelectedItem.ToString());
-				UcConstructeurs.Display(type);
-            }
-		}
-
-
-		private void UcConstructeurs_ObjetConstruit(object sender, EventArgs e)
-		{
-            UcMethodes.Display(type);
-            UcMethodes.AfficherBouton();
+				UcConstructeurs.Display(GetType(CbClasses.SelectedItem.ToString()));
 		}
 	}
 }
