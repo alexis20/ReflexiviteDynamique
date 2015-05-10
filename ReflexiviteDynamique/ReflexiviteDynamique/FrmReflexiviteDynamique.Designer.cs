@@ -30,11 +30,14 @@
 		{
 			this.PnlMain = new System.Windows.Forms.Panel();
 			this.TlpMain = new System.Windows.Forms.TableLayoutPanel();
-			this.PnlClasse = new System.Windows.Forms.Panel();
+			this.FlpClasse = new System.Windows.Forms.FlowLayoutPanel();
 			this.LblClasse = new System.Windows.Forms.Label();
+			this.CbClasses = new System.Windows.Forms.ComboBox();
+			this.UcConstructeurs = new ReflexiviteDynamique.UcConstructeurs();
+			this.UcMethodes = new ReflexiviteDynamique.UcMethodes();
 			this.PnlMain.SuspendLayout();
 			this.TlpMain.SuspendLayout();
-			this.PnlClasse.SuspendLayout();
+			this.FlpClasse.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// PnlMain
@@ -55,7 +58,9 @@
 			this.TlpMain.ColumnCount = 2;
 			this.TlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.TlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.TlpMain.Controls.Add(this.PnlClasse, 0, 0);
+			this.TlpMain.Controls.Add(this.FlpClasse, 0, 0);
+			this.TlpMain.Controls.Add(this.UcConstructeurs, 0, 1);
+			this.TlpMain.Controls.Add(this.UcMethodes, 1, 1);
 			this.TlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TlpMain.Location = new System.Drawing.Point(10, 10);
 			this.TlpMain.Margin = new System.Windows.Forms.Padding(0);
@@ -66,26 +71,50 @@
 			this.TlpMain.Size = new System.Drawing.Size(841, 461);
 			this.TlpMain.TabIndex = 0;
 			// 
-			// PnlClasse
+			// FlpClasse
 			// 
-			this.PnlClasse.Controls.Add(this.LblClasse);
-			this.PnlClasse.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.PnlClasse.Location = new System.Drawing.Point(0, 0);
-			this.PnlClasse.Margin = new System.Windows.Forms.Padding(0);
-			this.PnlClasse.Name = "PnlClasse";
-			this.PnlClasse.Size = new System.Drawing.Size(420, 22);
-			this.PnlClasse.TabIndex = 0;
+			this.FlpClasse.Controls.Add(this.LblClasse);
+			this.FlpClasse.Controls.Add(this.CbClasses);
+			this.FlpClasse.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.FlpClasse.Location = new System.Drawing.Point(0, 0);
+			this.FlpClasse.Margin = new System.Windows.Forms.Padding(0);
+			this.FlpClasse.Name = "FlpClasse";
+			this.FlpClasse.Size = new System.Drawing.Size(420, 22);
+			this.FlpClasse.TabIndex = 0;
 			// 
 			// LblClasse
 			// 
-			this.LblClasse.AutoSize = true;
-			this.LblClasse.Dock = System.Windows.Forms.DockStyle.Left;
-			this.LblClasse.Location = new System.Drawing.Point(0, 0);
+			this.LblClasse.Location = new System.Drawing.Point(3, 0);
 			this.LblClasse.Name = "LblClasse";
-			this.LblClasse.Size = new System.Drawing.Size(41, 13);
+			this.LblClasse.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+			this.LblClasse.Size = new System.Drawing.Size(46, 23);
 			this.LblClasse.TabIndex = 0;
 			this.LblClasse.Text = "Classe:";
-			this.LblClasse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// CbClasses
+			// 
+			this.CbClasses.FormattingEnabled = true;
+			this.CbClasses.Location = new System.Drawing.Point(52, 0);
+			this.CbClasses.Margin = new System.Windows.Forms.Padding(0);
+			this.CbClasses.Name = "CbClasses";
+			this.CbClasses.Size = new System.Drawing.Size(368, 21);
+			this.CbClasses.TabIndex = 1;
+			// 
+			// UcConstructeurs
+			// 
+			this.UcConstructeurs.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.UcConstructeurs.Location = new System.Drawing.Point(3, 25);
+			this.UcConstructeurs.Name = "UcConstructeurs";
+			this.UcConstructeurs.Size = new System.Drawing.Size(414, 433);
+			this.UcConstructeurs.TabIndex = 1;
+			// 
+			// UcMethodes
+			// 
+			this.UcMethodes.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.UcMethodes.Location = new System.Drawing.Point(423, 25);
+			this.UcMethodes.Name = "UcMethodes";
+			this.UcMethodes.Size = new System.Drawing.Size(415, 433);
+			this.UcMethodes.TabIndex = 2;
 			// 
 			// FrmReflexiviteDynamique
 			// 
@@ -98,8 +127,7 @@
 			this.Text = "Réflexivité Dynamique";
 			this.PnlMain.ResumeLayout(false);
 			this.TlpMain.ResumeLayout(false);
-			this.PnlClasse.ResumeLayout(false);
-			this.PnlClasse.PerformLayout();
+			this.FlpClasse.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -108,8 +136,11 @@
 
 		private System.Windows.Forms.Panel PnlMain;
 		private System.Windows.Forms.TableLayoutPanel TlpMain;
-		private System.Windows.Forms.Panel PnlClasse;
+		private System.Windows.Forms.FlowLayoutPanel FlpClasse;
 		private System.Windows.Forms.Label LblClasse;
+		private System.Windows.Forms.ComboBox CbClasses;
+		private UcConstructeurs UcConstructeurs;
+		private UcMethodes UcMethodes;
 	}
 }
 

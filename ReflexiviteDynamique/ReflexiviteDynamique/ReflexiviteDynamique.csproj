@@ -50,8 +50,21 @@
     <Compile Include="FrmReflexiviteDynamique.Designer.cs">
       <DependentUpon>FrmReflexiviteDynamique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personne.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcConstructeurs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcConstructeurs.Designer.cs">
+      <DependentUpon>UcConstructeurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcMethodes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcMethodes.Designer.cs">
+      <DependentUpon>UcMethodes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmReflexiviteDynamique.resx">
       <DependentUpon>FrmReflexiviteDynamique.cs</DependentUpon>
     </EmbeddedResource>
@@ -64,6 +77,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UcConstructeurs.resx">
+      <DependentUpon>UcConstructeurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcMethodes.resx">
+      <DependentUpon>UcMethodes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
