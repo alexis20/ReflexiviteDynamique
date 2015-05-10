@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ReflexiviteDynamique
@@ -20,7 +21,13 @@ namespace ReflexiviteDynamique
 
 		public void Display(Type t)
 		{
-            LbMethodes.DataSource = t.GetMethods();
+            MethodInfo [] metInfo = t.GetMethods();
+
+            foreach (var item in metInfo)
+            {
+                if(item.IsPublic)
+                    LbMethodes.Items.Add(item);
+            }
 		}
 
         public void AfficherBouton()
