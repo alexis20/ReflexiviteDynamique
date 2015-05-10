@@ -66,7 +66,7 @@
 			this.TlpMain.Margin = new System.Windows.Forms.Padding(0);
 			this.TlpMain.Name = "TlpMain";
 			this.TlpMain.RowCount = 2;
-			this.TlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+			this.TlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.TlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.TlpMain.Size = new System.Drawing.Size(842, 470);
 			this.TlpMain.TabIndex = 0;
@@ -79,7 +79,7 @@
 			this.FlpClasse.Location = new System.Drawing.Point(0, 0);
 			this.FlpClasse.Margin = new System.Windows.Forms.Padding(0);
 			this.FlpClasse.Name = "FlpClasse";
-			this.FlpClasse.Size = new System.Drawing.Size(421, 22);
+			this.FlpClasse.Size = new System.Drawing.Size(421, 20);
 			this.FlpClasse.TabIndex = 0;
 			// 
 			// LblClasse
@@ -87,12 +87,13 @@
 			this.LblClasse.Location = new System.Drawing.Point(3, 0);
 			this.LblClasse.Name = "LblClasse";
 			this.LblClasse.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-			this.LblClasse.Size = new System.Drawing.Size(46, 23);
+			this.LblClasse.Size = new System.Drawing.Size(46, 21);
 			this.LblClasse.TabIndex = 0;
 			this.LblClasse.Text = "Classe:";
 			// 
 			// CbClasses
 			// 
+			this.CbClasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.CbClasses.FormattingEnabled = true;
 			this.CbClasses.Location = new System.Drawing.Point(52, 0);
 			this.CbClasses.Margin = new System.Windows.Forms.Padding(0);
@@ -103,17 +104,17 @@
 			// UcConstructeurs
 			// 
 			this.UcConstructeurs.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.UcConstructeurs.Location = new System.Drawing.Point(3, 25);
+			this.UcConstructeurs.Location = new System.Drawing.Point(3, 23);
 			this.UcConstructeurs.Name = "UcConstructeurs";
-			this.UcConstructeurs.Size = new System.Drawing.Size(415, 442);
+			this.UcConstructeurs.Size = new System.Drawing.Size(415, 444);
 			this.UcConstructeurs.TabIndex = 1;
 			// 
 			// UcMethodes
 			// 
 			this.UcMethodes.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.UcMethodes.Location = new System.Drawing.Point(424, 25);
+			this.UcMethodes.Location = new System.Drawing.Point(424, 23);
 			this.UcMethodes.Name = "UcMethodes";
-			this.UcMethodes.Size = new System.Drawing.Size(415, 442);
+			this.UcMethodes.Size = new System.Drawing.Size(415, 444);
 			this.UcMethodes.TabIndex = 2;
 			// 
 			// FrmReflexiviteDynamique
@@ -122,8 +123,10 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 512);
 			this.Controls.Add(this.PnlMain);
+			this.MinimumSize = new System.Drawing.Size(900, 550);
 			this.Name = "FrmReflexiviteDynamique";
 			this.Padding = new System.Windows.Forms.Padding(10);
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Réflexivité Dynamique";
 			this.PnlMain.ResumeLayout(false);
 			this.TlpMain.ResumeLayout(false);
