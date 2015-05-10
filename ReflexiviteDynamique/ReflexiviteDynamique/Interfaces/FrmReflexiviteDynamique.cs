@@ -30,15 +30,19 @@ namespace ReflexiviteDynamique
 		}
 
 
-		static List<Type> GetClasses()
+	    List<Type> GetClasses()
 		{
 			return Assembly.GetExecutingAssembly().GetTypes()
 					.Where(t => t.IsClass && t.Namespace == "ReflexiviteDynamique.Classes")
 					.ToList();
 		}
 
+        private Type getClasses(string t)
+        {
+            return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == "ReflexiviteDynamique.Classes" && u.Name == t);
+        }
 
-		private void CbClasses_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbClasses_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
 		}
