@@ -21,13 +21,7 @@ namespace ReflexiviteDynamique
 
 		public void Display(Type t)
 		{
-            MethodInfo [] metInfo = t.GetMethods();
-
-            foreach (var item in metInfo)
-            {
-                if(item.IsPublic)
-                    LbMethodes.Items.Add(item);
-            }
+			LbMethodes.DataSource = t.GetMethods(BindingFlags.Instance | BindingFlags.Public);
 		}
 
         public void AfficherBouton()
