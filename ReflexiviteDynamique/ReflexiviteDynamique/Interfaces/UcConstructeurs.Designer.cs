@@ -72,6 +72,7 @@
 			this.LbConstructeurs.Name = "LbConstructeurs";
 			this.LbConstructeurs.Size = new System.Drawing.Size(607, 458);
 			this.LbConstructeurs.TabIndex = 1;
+			this.LbConstructeurs.SelectedIndexChanged += new System.EventHandler(this.LbConstructeurs_SelectedIndexChanged);
 			// 
 			// BtnConstruire
 			// 
