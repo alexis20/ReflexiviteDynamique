@@ -56,7 +56,7 @@ namespace ReflexiviteDynamique
             {
                 Interfaces.FrmEntrerParametres form = new Interfaces.FrmEntrerParametres(ci.GetParameters());
                 if (form.ShowDialog() == DialogResult.OK)
-                    UcMethodes.Display(type, ci.Invoke(form.));
+                    UcMethodes.Display(type, ci.Invoke(form.ParametersInfo));
             }
 		}
 	}

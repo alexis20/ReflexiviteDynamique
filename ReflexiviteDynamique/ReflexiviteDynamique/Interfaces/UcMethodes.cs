@@ -50,12 +50,25 @@ namespace ReflexiviteDynamique
 		private void BtnExecuter_Click(object sender, EventArgs e)
 		{
             if (mi.GetParameters().Length == 0)
-                mi.Invoke(instance, null);
+            {
+                var reponse = mi.Invoke(instance, null);
+                if(reponse != null)
+                    lbReponse.Text = reponse.ToString();
+                else
+                    lbReponse.Text = "Fct réussis";
+            }
             else
             {
                 Interfaces.FrmEntrerParametres form = new Interfaces.FrmEntrerParametres(mi.GetParameters());
                 if (form.ShowDialog() == DialogResult.OK)
-                    mi.Invoke(instance, form.);
+                {
+                    var reponse = mi.Invoke(instance, form.ParametersInfo);
+                    if (reponse != null)
+                        lbReponse.Text = reponse.ToString();
+                    else
+                        lbReponse.Text = "Fct réussis";
+
+                }
             }
 		}
 	}
