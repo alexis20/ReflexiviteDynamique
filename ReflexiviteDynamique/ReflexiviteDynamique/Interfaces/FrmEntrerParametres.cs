@@ -36,7 +36,7 @@ namespace ReflexiviteDynamique.Interfaces
 			for (int i = 0; i < parameters.Length; ++i)
 			{
 				Control[] ctrl = Controls.Find(parameters[i].Name, true);
-				ErrorProvider.SetError(ctrl[0], string.Empty);
+				ErrorProvider.SetError(ctrl[0].Parent, string.Empty);
 
 				if (ctrl[0] is CheckBox)
 					objets[i] = ((CheckBox)ctrl[0]).Checked;
