@@ -69,9 +69,10 @@
 			this.LbMethodes.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.LbMethodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.LbMethodes.FormattingEnabled = true;
-			this.LbMethodes.Location = new System.Drawing.Point(3, 23);
+			this.LbMethodes.Location = new System.Drawing.Point(0, 20);
+			this.LbMethodes.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
 			this.LbMethodes.Name = "LbMethodes";
-			this.LbMethodes.Size = new System.Drawing.Size(695, 512);
+			this.LbMethodes.Size = new System.Drawing.Size(701, 515);
 			this.LbMethodes.TabIndex = 1;
 			this.LbMethodes.SelectedIndexChanged += new System.EventHandler(this.LbMethodes_SelectedIndexChanged);
 			// 
@@ -79,9 +80,10 @@
 			// 
 			this.BtnExecuter.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.BtnExecuter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.BtnExecuter.Location = new System.Drawing.Point(3, 541);
+			this.BtnExecuter.Location = new System.Drawing.Point(0, 544);
+			this.BtnExecuter.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
 			this.BtnExecuter.Name = "BtnExecuter";
-			this.BtnExecuter.Size = new System.Drawing.Size(695, 23);
+			this.BtnExecuter.Size = new System.Drawing.Size(701, 23);
 			this.BtnExecuter.TabIndex = 2;
 			this.BtnExecuter.Text = "Exécuter";
 			this.BtnExecuter.UseVisualStyleBackColor = true;
