@@ -14,7 +14,7 @@ namespace ReflexiviteDynamique.Classes
         int Age;
         double Salaire;
 
-        Employe()
+        public Employe()
         {
             SetNom("swag");
             SetAge(25);
@@ -22,7 +22,7 @@ namespace ReflexiviteDynamique.Classes
             SetPermanent(false);
             SetDate(DateTime.Now);
         }
-        Employe(string nom,int age)
+        public Employe(string nom,int age)
         {
             SetNom(nom);
             SetAge(age);
@@ -30,7 +30,7 @@ namespace ReflexiviteDynamique.Classes
             SetPermanent(false);
             SetDate(DateTime.Now);
         }
-        Employe(string nom,int age, double salaire)
+        public Employe(string nom,int age, double salaire)
         {
             SetNom(nom);
             SetAge(age);
@@ -38,7 +38,7 @@ namespace ReflexiviteDynamique.Classes
             SetPermanent(false);
             SetDate(DateTime.Now);
         }
-        Employe(string nom, int age, double salaire,bool permanent)
+        public Employe(string nom, int age, double salaire,bool permanent)
         {
             SetNom(nom);
             SetAge(age);
@@ -46,7 +46,7 @@ namespace ReflexiviteDynamique.Classes
             SetPermanent(permanent);
             SetDate(DateTime.Now);
         }
-        Employe(string nom, int age, double salaire, bool permanent, DateTime date)
+        public Employe(string nom, int age, double salaire, bool permanent, DateTime date)
         {
             SetNom(nom);
             SetAge(age);
