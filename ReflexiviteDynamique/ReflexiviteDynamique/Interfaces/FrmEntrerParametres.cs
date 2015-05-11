@@ -35,22 +35,52 @@ namespace ReflexiviteDynamique.Interfaces
 			{
 				ParameterInfo pi = (ParameterInfo)ParametersInfo[i];
 				Control[] ctrl = Controls.Find(pi.Name, true);
+				ErrorProvider.SetError(ctrl[0], string.Empty);
 
 				if (ctrl[0] is CheckBox)
-				{
-
-				}
+					ParametersInfo[i] = ((CheckBox)ctrl[0]).Checked;
 				else if (ctrl[0] is DateTimePicker)
-				{
+					ParametersInfo[i] = ((DateTimePicker)ctrl[0]).Value.Date;
+				else if (ctrl[0] is TextBox)
+					ParametersInfo[i] = ConvertTo((TextBox)ctrl[0], pi);
 
-				}
-				else
-				{
-
-				}
+				if (!string.IsNullOrEmpty(ErrorProvider.GetError(ctrl[0]))) return;
 			}
 
 			DialogResult = DialogResult.OK;
+		}
+
+
+		private object ConvertTo(TextBox ctrl, ParameterInfo pi)
+		{
+			string valeur = ctrl.Text;
+
+			switch (pi.ParameterType.Name)
+			{
+				case "Int32":
+					int nbInt;
+					if (int.TryParse(valeur, out nbInt))
+						return nbInt;
+					else
+						ErrorProvider.SetError(ctrl, "La valeur doit être un entier.");
+					break;
+				case "Float":
+					float nbFloat;
+					if (float.TryParse(valeur, out nbFloat))
+						return nbFloat;
+					else
+						ErrorProvider.SetError(ctrl, "La valeur doit être un float.");
+					break;
+				case "Double":
+					double nbDouble;
+					if (double.TryParse(valeur, out nbDouble))
+						return nbDouble;
+					else
+						ErrorProvider.SetError(ctrl, "La valeur doit être un double.");
+					break;
+			}
+
+			return valeur;
 		}
 
 
