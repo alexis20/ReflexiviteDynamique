@@ -54,10 +54,12 @@ namespace ReflexiviteDynamique
                 UcMethodes.Display(type, ci.Invoke(ci.GetParameters()));
             else
             {
-                //if (true)
-                //{
-                //    UcMethodes.Display(type, ci.Invoke()));
-                //}
+                Interfaces.FrmEntrerParametres form = new Interfaces.FrmEntrerParametres(ci.GetParameters());
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+
+                    //UcMethodes.Display(type, ci.Invoke()));
+                }
             }
 		}
 	}

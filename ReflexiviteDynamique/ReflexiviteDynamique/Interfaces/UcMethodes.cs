@@ -53,7 +53,11 @@ namespace ReflexiviteDynamique
                 mi.Invoke(instance, null);
             else
             {
+                Interfaces.FrmEntrerParametres form = new Interfaces.FrmEntrerParametres(mi.GetParameters());
+                if (form.ShowDialog() == DialogResult.OK)
+                {
 
+                }
             }
 		}
 	}
