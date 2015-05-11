@@ -18,8 +18,26 @@ namespace ReflexiviteDynamique.Interfaces
 
 			foreach (var pi in parameters)
 			{
-				
+				FlpMain.Controls.Add(GetFlowLayoutPanel(pi));
 			}
+		}
+
+
+		private FlowLayoutPanel GetFlowLayoutPanel(ParameterInfo pi)
+		{
+			var p = pi.ParameterType.Name;
+
+			FlowLayoutPanel flp = new FlowLayoutPanel();
+			flp.AutoSize = true;
+			flp.Controls.Add(GetLabel(pi));
+
+			switch (pi.ParameterType.Name)
+			{
+				case "Int32":
+					break;
+			}
+
+			return flp;
 		}
 
 
@@ -35,7 +53,8 @@ namespace ReflexiviteDynamique.Interfaces
 		private TextBox GetTextBox()
 		{
 			TextBox txt = new TextBox();
-			return txt;
+			txt.Font = new System.Drawing.Font(txt.Font, System.Drawing.FontStyle.Bold);
+            return txt;
 		}
 
 
@@ -49,6 +68,7 @@ namespace ReflexiviteDynamique.Interfaces
 		private CheckBox GetCheckBox()
 		{
 			CheckBox chk = new CheckBox();
+			chk.FlatStyle = FlatStyle.Flat;
 			return chk;
 		}
 	}
