@@ -35,8 +35,7 @@ namespace ReflexiviteDynamique.Interfaces
 		{
 			for (int i = 0; i < parameters.Length; ++i)
 			{
-				ParameterInfo pi = (ParameterInfo)parameters[i];
-				Control[] ctrl = Controls.Find(pi.Name, true);
+				Control[] ctrl = Controls.Find(parameters[i].Name, true);
 				ErrorProvider.SetError(ctrl[0], string.Empty);
 
 				if (ctrl[0] is CheckBox)
@@ -44,9 +43,9 @@ namespace ReflexiviteDynamique.Interfaces
 				else if (ctrl[0] is DateTimePicker)
 					objets[i] = ((DateTimePicker)ctrl[0]).Value.Date;
 				else if (ctrl[0] is TextBox)
-					objets[i] = ConvertTo((TextBox)ctrl[0], pi);
+					objets[i] = ConvertTo((TextBox)ctrl[0], parameters[i]);
 
-				if (!string.IsNullOrEmpty(ErrorProvider.GetError(ctrl[0]))) return;
+				if (!string.IsNullOrEmpty(ErrorProvider.GetError(ctrl[0].Parent))) return;
 			}
 
 			DialogResult = DialogResult.OK;
@@ -64,21 +63,21 @@ namespace ReflexiviteDynamique.Interfaces
 					if (int.TryParse(valeur, out nbInt))
 						return nbInt;
 					else
-						ErrorProvider.SetError(ctrl, "La valeur doit être un entier.");
+						ErrorProvider.SetError(ctrl.Parent, "La valeur doit être un entier.");
 					break;
 				case "Float":
 					float nbFloat;
 					if (float.TryParse(valeur, out nbFloat))
 						return nbFloat;
 					else
-						ErrorProvider.SetError(ctrl, "La valeur doit être un float.");
+						ErrorProvider.SetError(ctrl.Parent, "La valeur doit être un float.");
 					break;
 				case "Double":
 					double nbDouble;
 					if (double.TryParse(valeur, out nbDouble))
 						return nbDouble;
 					else
-						ErrorProvider.SetError(ctrl, "La valeur doit être un double.");
+						ErrorProvider.SetError(ctrl.Parent, "La valeur doit être un double.");
 					break;
 			}
 
