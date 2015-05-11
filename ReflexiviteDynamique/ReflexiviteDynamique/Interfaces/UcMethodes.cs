@@ -37,14 +37,24 @@ namespace ReflexiviteDynamique
 			if (LbMethodes.SelectedItems.Count > 0)
 			{
 				mi = (MethodInfo)LbMethodes.SelectedItem;
-				BtnExecuter.Enabled = mi.GetParameters().Length == 0;	// On ne veut que les méthodes n'ayant aucun paramètre
-			}
+                BtnExecuter.Enabled = true;
+
+                if (mi.GetParameters().Length == 0)
+                    BtnExecuter.Text = "Exécuter";
+                else
+                    BtnExecuter.Text = "Entrez les paramètres pour exécuter";
+            }
 		}
 
 
 		private void BtnExecuter_Click(object sender, EventArgs e)
 		{
-			mi.Invoke(instance, null);
+            if (mi.GetParameters().Length == 0)
+                mi.Invoke(instance, null);
+            else
+            {
+
+            }
 		}
 	}
 }

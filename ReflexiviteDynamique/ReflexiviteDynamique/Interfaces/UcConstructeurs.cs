@@ -38,14 +38,27 @@ namespace ReflexiviteDynamique
 			if (LbConstructeurs.SelectedItems.Count > 0)
 			{
 				ci = (ConstructorInfo)LbConstructeurs.SelectedItem;
-				BtnConstruire.Enabled = ci.GetParameters().Length == 0;		// On ne veut que le constructeur par défaut
+				BtnConstruire.Enabled = true;
+
+                if (ci.GetParameters().Length == 0)
+                    BtnConstruire.Text = "Construire Objet";
+                else
+                    BtnConstruire.Text = "Entrez les paramètres pour construire l'objet";
 			}
 		}
 
 
 		private void BtnConstruire_Click(object sender, EventArgs e)
 		{
-			UcMethodes.Display(type, ci.Invoke(ci.GetParameters()));
+            if (ci.GetParameters().Length == 0)
+                UcMethodes.Display(type, ci.Invoke(ci.GetParameters()));
+            else
+            {
+                //if (true)
+                //{
+                //    UcMethodes.Display(type, ci.Invoke()));
+                //}
+            }
 		}
 	}
 }
