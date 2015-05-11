@@ -7,7 +7,8 @@ namespace ReflexiviteDynamique.Interfaces
 {
 	public partial class FrmEntrerParametres : Form
 	{
-		public object[] ParametersInfo;
+		public object[] objets;
+		private ParameterInfo[] parameters;
 
 
 		public FrmEntrerParametres()
@@ -16,11 +17,12 @@ namespace ReflexiviteDynamique.Interfaces
 		}
 
 
-		public FrmEntrerParametres(ParameterInfo[] parameters)
+		public FrmEntrerParametres(ParameterInfo[] p)
 		{
 			InitializeComponent();
 
-			ParametersInfo = parameters;
+			objets = new object[p.Length];
+			parameters = p;
 
 			foreach (var pi in parameters)
 				FlpMain.Controls.Add(GetFlowLayoutPanel(pi));
@@ -31,18 +33,18 @@ namespace ReflexiviteDynamique.Interfaces
 
 		private void BtnOk_Click(object sender, EventArgs e)
 		{
-			for (int i = 0; i < ParametersInfo.Length; ++i)
+			for (int i = 0; i < parameters.Length; ++i)
 			{
-				ParameterInfo pi = (ParameterInfo)ParametersInfo[i];
+				ParameterInfo pi = (ParameterInfo)parameters[i];
 				Control[] ctrl = Controls.Find(pi.Name, true);
 				ErrorProvider.SetError(ctrl[0], string.Empty);
 
 				if (ctrl[0] is CheckBox)
-					ParametersInfo[i] = ((CheckBox)ctrl[0]).Checked;
+					objets[i] = ((CheckBox)ctrl[0]).Checked;
 				else if (ctrl[0] is DateTimePicker)
-					ParametersInfo[i] = ((DateTimePicker)ctrl[0]).Value.Date;
+					objets[i] = ((DateTimePicker)ctrl[0]).Value.Date;
 				else if (ctrl[0] is TextBox)
-					ParametersInfo[i] = ConvertTo((TextBox)ctrl[0], pi);
+					objets[i] = ConvertTo((TextBox)ctrl[0], pi);
 
 				if (!string.IsNullOrEmpty(ErrorProvider.GetError(ctrl[0]))) return;
 			}

@@ -62,7 +62,7 @@ namespace ReflexiviteDynamique
                 Interfaces.FrmEntrerParametres form = new Interfaces.FrmEntrerParametres(mi.GetParameters());
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    var reponse = mi.Invoke(instance, form.ParametersInfo);
+                    var reponse = mi.Invoke(instance, form.objets);
                     if (reponse != null)
                         lbReponse.Text = reponse.ToString();
                     else
