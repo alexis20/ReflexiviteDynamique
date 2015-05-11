@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -7,7 +6,7 @@ namespace ReflexiviteDynamique.Interfaces
 {
 	public partial class FrmEntrerParametres : Form
 	{
-		public object[] objets;
+		public object[] objets { get; private set; }
 		private ParameterInfo[] parameters;
 
 
