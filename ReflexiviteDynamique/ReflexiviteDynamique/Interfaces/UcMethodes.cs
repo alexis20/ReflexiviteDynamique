@@ -53,9 +53,9 @@ namespace ReflexiviteDynamique
             {
                 var reponse = mi.Invoke(instance, null);
                 if(reponse != null)
-                    lbReponse.Text = reponse.ToString();
+                    MessageBox.Show(reponse.ToString());
                 else
-                    lbReponse.Text = "Fct réussis";
+                    MessageBox.Show("Fct réussis");
             }
             else
             {
@@ -64,9 +64,9 @@ namespace ReflexiviteDynamique
                 {
                     var reponse = mi.Invoke(instance, form.objets);
                     if (reponse != null)
-                        lbReponse.Text = reponse.ToString();
+                        MessageBox.Show(reponse.ToString());
                     else
-                        lbReponse.Text = "Fct réussis";
+                        MessageBox.Show("Fct réussis");
 
                 }
             }

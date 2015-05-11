@@ -32,7 +32,6 @@
             this.LblMethodes = new System.Windows.Forms.Label();
             this.LbMethodes = new System.Windows.Forms.ListBox();
             this.BtnExecuter = new System.Windows.Forms.Button();
-            this.lbReponse = new System.Windows.Forms.Label();
             this.TlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +42,6 @@
             this.TlpMain.Controls.Add(this.LblMethodes, 0, 0);
             this.TlpMain.Controls.Add(this.LbMethodes, 0, 1);
             this.TlpMain.Controls.Add(this.BtnExecuter, 0, 2);
-            this.TlpMain.Controls.Add(this.lbReponse, 0, 3);
             this.TlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TlpMain.Location = new System.Drawing.Point(0, 0);
             this.TlpMain.Name = "TlpMain";
@@ -90,14 +88,6 @@
             this.BtnExecuter.UseVisualStyleBackColor = true;
             this.BtnExecuter.Click += new System.EventHandler(this.BtnExecuter_Click);
             // 
-            // lbReponse
-            // 
-            this.lbReponse.AutoSize = true;
-            this.lbReponse.Location = new System.Drawing.Point(3, 547);
-            this.lbReponse.Name = "lbReponse";
-            this.lbReponse.Size = new System.Drawing.Size(0, 13);
-            this.lbReponse.TabIndex = 3;
-            // 
             // UcMethodes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +107,5 @@
 		private System.Windows.Forms.Label LblMethodes;
 		private System.Windows.Forms.ListBox LbMethodes;
 		private System.Windows.Forms.Button BtnExecuter;
-        private System.Windows.Forms.Label lbReponse;
     }
 }

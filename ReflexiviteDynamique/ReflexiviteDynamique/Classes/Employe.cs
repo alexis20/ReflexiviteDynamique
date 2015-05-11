@@ -57,7 +57,7 @@ namespace ReflexiviteDynamique.Classes
 
         public DateTime GetDate()
         {
-            return dateEntrer;
+            return dateEntrer.Date;
         }
 
         public bool GetPermanent()

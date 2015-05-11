@@ -51,12 +51,19 @@ namespace ReflexiviteDynamique
 		private void BtnConstruire_Click(object sender, EventArgs e)
 		{
             if (ci.GetParameters().Length == 0)
+            {
                 UcMethodes.Display(type, ci.Invoke(ci.GetParameters()));
+                MessageBox.Show("L'objet a été construit");
+            }
             else
             {
                 Interfaces.FrmEntrerParametres form = new Interfaces.FrmEntrerParametres(ci.GetParameters());
                 if (form.ShowDialog() == DialogResult.OK)
+                {
                     UcMethodes.Display(type, ci.Invoke(form.objets));
+                    MessageBox.Show("L'objet a été construit");
+                }
+
             }
 		}
 	}
