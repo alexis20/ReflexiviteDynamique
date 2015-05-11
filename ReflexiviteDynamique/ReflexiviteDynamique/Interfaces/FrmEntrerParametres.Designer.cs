@@ -28,11 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.FlpBottom = new System.Windows.Forms.FlowLayoutPanel();
 			this.BtnAnnuler = new System.Windows.Forms.Button();
 			this.BtnOk = new System.Windows.Forms.Button();
 			this.FlpMain = new System.Windows.Forms.FlowLayoutPanel();
+			this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
 			this.FlpBottom.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// FlpBottom
@@ -69,6 +72,7 @@
 			this.BtnOk.TabIndex = 1;
 			this.BtnOk.Text = "Ok";
 			this.BtnOk.UseVisualStyleBackColor = true;
+			this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
 			// 
 			// FlpMain
 			// 
@@ -79,6 +83,11 @@
 			this.FlpMain.Name = "FlpMain";
 			this.FlpMain.Size = new System.Drawing.Size(528, 356);
 			this.FlpMain.TabIndex = 2;
+			// 
+			// ErrorProvider
+			// 
+			this.ErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.ErrorProvider.ContainerControl = this;
 			// 
 			// FrmEntrerParametres
 			// 
@@ -97,6 +106,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Entrer les paramètres";
 			this.FlpBottom.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -107,5 +117,6 @@
 		private System.Windows.Forms.Button BtnAnnuler;
 		private System.Windows.Forms.Button BtnOk;
 		private System.Windows.Forms.FlowLayoutPanel FlpMain;
+		private System.Windows.Forms.ErrorProvider ErrorProvider;
 	}
 }
