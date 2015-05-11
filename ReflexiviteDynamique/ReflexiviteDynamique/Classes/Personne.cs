@@ -11,22 +11,22 @@
             SetNom("Bob");
         }
 
-        public Personne(int a)
+        public Personne(int age)
         {
-            SetAge(a);
+            SetAge(age);
             SetNom("George");
         }
 
-        public Personne(string n)
+        public Personne(string nom)
         {
             SetAge(1);
-            SetNom(n);
+            SetNom(nom);
         }
 
-        public Personne(int a, string n)
+        public Personne(int age, string nom)
         {
-            SetAge(a);
-            SetNom(n);
+            SetAge(age);
+            SetNom(nom);
         }
 
         public int GetAge()
@@ -39,14 +39,14 @@
             return Nom;
         }
 
-        public void SetAge(int a)
+        public void SetAge(int age)
         {
-            Age = a;
+            Age = age;
         }
 
-        public void SetNom(string n)
+        public void SetNom(string nom)
         {
-            Nom = n;
+            Nom = nom;
         }
 
         public void AjouterAnnee()
