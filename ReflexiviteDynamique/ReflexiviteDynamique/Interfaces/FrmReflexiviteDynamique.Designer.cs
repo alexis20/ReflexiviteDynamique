@@ -116,6 +116,7 @@
 			this.Controls.Add(this.PnlMain);
 			this.Name = "FrmReflexiviteDynamique";
 			this.Padding = new System.Windows.Forms.Padding(10);
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Réflexivité Dynamique";
 			this.Load += new System.EventHandler(this.FrmReflexiviteDynamique_Load);
 			this.PnlMain.ResumeLayout(false);

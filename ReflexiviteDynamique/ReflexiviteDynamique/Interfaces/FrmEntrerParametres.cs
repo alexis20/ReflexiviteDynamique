@@ -20,20 +20,27 @@ namespace ReflexiviteDynamique.Interfaces
 			{
 				FlpMain.Controls.Add(GetFlowLayoutPanel(pi));
 			}
+
+			Height = FlpMain.Height + FlpBottom.Height;
 		}
 
 
 		private FlowLayoutPanel GetFlowLayoutPanel(ParameterInfo pi)
 		{
-			var p = pi.ParameterType.Name;
-
 			FlowLayoutPanel flp = new FlowLayoutPanel();
 			flp.AutoSize = true;
 			flp.Controls.Add(GetLabel(pi));
 
 			switch (pi.ParameterType.Name)
 			{
-				case "Int32":
+				case "Boolean":
+					flp.Controls.Add(GetCheckBox());
+					break;
+				case "DateTime":
+					flp.Controls.Add(GetDateTimePicker());
+					break;
+				default:
+					flp.Controls.Add(GetTextBox());
 					break;
 			}
 
@@ -46,6 +53,7 @@ namespace ReflexiviteDynamique.Interfaces
 			Label lbl = new Label();
 			lbl.Text = pi.Name + ":";
 			lbl.AutoSize = true;
+			lbl.Padding = new Padding(0, 5, 0, 0);
 			return lbl;
 		}
 
@@ -61,6 +69,8 @@ namespace ReflexiviteDynamique.Interfaces
 		private DateTimePicker GetDateTimePicker()
 		{
 			DateTimePicker dtp = new DateTimePicker();
+			dtp.Format = DateTimePickerFormat.Short;
+			dtp.Width = 93;
 			return dtp;
 		}
 
@@ -69,6 +79,7 @@ namespace ReflexiviteDynamique.Interfaces
 		{
 			CheckBox chk = new CheckBox();
 			chk.FlatStyle = FlatStyle.Flat;
+			chk.Padding = new Padding(0, 0, 0, 3);
 			return chk;
 		}
 	}

@@ -72,6 +72,7 @@
 			// 
 			// FlpMain
 			// 
+			this.FlpMain.AutoSize = true;
 			this.FlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.FlpMain.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.FlpMain.Location = new System.Drawing.Point(10, 10);
@@ -88,12 +89,16 @@
 			this.ClientSize = new System.Drawing.Size(548, 439);
 			this.Controls.Add(this.FlpMain);
 			this.Controls.Add(this.FlpBottom);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "FrmEntrerParametres";
 			this.Padding = new System.Windows.Forms.Padding(10);
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Entrer les paramètres";
 			this.FlpBottom.ResumeLayout(false);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
