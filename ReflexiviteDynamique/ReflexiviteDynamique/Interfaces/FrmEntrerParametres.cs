@@ -23,27 +23,33 @@ namespace ReflexiviteDynamique.Interfaces
 		}
 
 
-		private void GetLabel(ParameterInfo pi)
+		private Label GetLabel(ParameterInfo pi)
 		{
-
+			Label lbl = new Label();
+			lbl.Text = pi.Name + ":";
+			lbl.AutoSize = true;
+			return lbl;
 		}
 
 
-		private void GetTextBox()
+		private TextBox GetTextBox()
 		{
-
+			TextBox txt = new TextBox();
+			return txt;
 		}
 
 
-		private void GetDateTimePicker()
+		private DateTimePicker GetDateTimePicker()
 		{
-
+			DateTimePicker dtp = new DateTimePicker();
+			return dtp;
 		}
 
 
-		private void GetCheckBox()
+		private CheckBox GetCheckBox()
 		{
-
+			CheckBox chk = new CheckBox();
+			return chk;
 		}
 	}
 }
