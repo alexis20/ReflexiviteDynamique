@@ -55,7 +55,7 @@ namespace ReflexiviteDynamique
                 if(reponse != null)
                     MessageBox.Show(reponse.ToString());
                 else
-                    MessageBox.Show("Fct réussis");
+                    MessageBox.Show("Fonction réussis");
             }
             else
             {
@@ -66,7 +66,7 @@ namespace ReflexiviteDynamique
                     if (reponse != null)
                         MessageBox.Show(reponse.ToString());
                     else
-                        MessageBox.Show("Fct réussis");
+                        MessageBox.Show("Fonction réussis");
 
                 }
             }
