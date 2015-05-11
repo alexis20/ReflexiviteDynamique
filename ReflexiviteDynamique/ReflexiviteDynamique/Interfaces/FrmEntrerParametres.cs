@@ -25,8 +25,6 @@ namespace ReflexiviteDynamique.Interfaces
 
 			foreach (var pi in parameters)
 				FlpMain.Controls.Add(GetFlowLayoutPanel(pi));
-
-			Height = FlpMain.Height + FlpBottom.Height;
 		}
 
 
