@@ -1,6 +1,9 @@
 ﻿namespace ReflexiviteDynamique.Classes
 {
-    class Personne
+	/// <summary>
+	/// Classe test #2
+	/// </summary>
+	class Personne
     {
         private int Age;
         private string Nom;

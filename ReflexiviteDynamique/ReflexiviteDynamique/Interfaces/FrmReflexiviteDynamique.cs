@@ -9,6 +9,9 @@ namespace ReflexiviteDynamique
 {
 	public partial class FrmReflexiviteDynamique : Form
 	{
+		private const string NAMESPACE = "ReflexiviteDynamique.Classes";
+
+
 		public FrmReflexiviteDynamique()
 		{
 			InitializeComponent();
@@ -31,14 +34,14 @@ namespace ReflexiviteDynamique
 		List<Type> GetClasses()
 		{
 			return Assembly.GetExecutingAssembly().GetTypes()
-					.Where(t => t.IsClass && t.Namespace == "ReflexiviteDynamique.Classes")
+					.Where(t => t.IsClass && t.Namespace == NAMESPACE)
 					.ToList();
 		}
 
 
 		private Type GetType(string name)
 		{
-			return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == "ReflexiviteDynamique.Classes" && u.Name == name);
+			return Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(u => u.IsClass && u.Namespace == NAMESPACE && u.Name == name);
 		}
 
 

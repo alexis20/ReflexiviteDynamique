@@ -8,7 +8,7 @@ namespace ReflexiviteDynamique
 	{
 		private MethodInfo mi = null;
 		private object instance = null;
-
+	
 
 		public UcMethodes()
 		{
@@ -55,7 +55,7 @@ namespace ReflexiviteDynamique
                 if(reponse != null)
                     MessageBox.Show(reponse.ToString());
                 else
-                    MessageBox.Show("Fonction réussis");
+                    MessageBox.Show("Fonction réussie");
             }
             else
             {
@@ -66,7 +66,7 @@ namespace ReflexiviteDynamique
                     if (reponse != null)
                         MessageBox.Show(reponse.ToString());
                     else
-                        MessageBox.Show("Fonction réussis");
+                        MessageBox.Show("Fonction réussie");
 
                 }
             }
